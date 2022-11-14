@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 // import { Counter } from './features/counter/Counter';
-import './App.css';
 import Rockets from './pages/Rockets';
 import Missions from './pages/Missions';
 import Dragons from './pages/Dragons';
@@ -12,6 +11,7 @@ const App = () => (
   <>
     <main className="d-flex">
       <NavBar />
+      <hr />
       <Routes>
         <Route path="/" element={<Rockets />} />
         <Route path="missions" element={<Missions />} />
