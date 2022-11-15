@@ -1,0 +1,12 @@
+.rocketCard {
+  display: flex;
+  width: 50%;
+  column-gap: 50px;
+}
+
+.rocketsContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  align-items: center;
+}
