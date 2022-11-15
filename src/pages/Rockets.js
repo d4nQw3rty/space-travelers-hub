@@ -26,10 +26,14 @@ const Rockets = () => {
 
     return rockets.map((rocket) => (
       <div key={uuid()} className={style.rocketCard}>
-        <img src={rocket.flickr_images[0]} alt="rocket" height="200px" width="200px" />
+        <img src={rocket.flickr_images[0]} alt="rocket" height="300px" width="400px" />
         <div className="description">
-          <h3 className={style.test}>{rocket.rocket_name}</h3>
-          <p>{rocket.description}</p>
+          <h3>{rocket.rocket_name}</h3>
+          <p>
+            <span className={style.reserved}>{ Math.random() < 0.3 ? 'Reserved' : ''}</span>
+            {rocket.description}
+          </p>
+          <button className={style.button} type="button">Reserve Rocket</button>
         </div>
       </div>
     ));
