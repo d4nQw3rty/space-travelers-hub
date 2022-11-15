@@ -1,7 +1,13 @@
+:root {
+  --reservationColor: #007bff;
+  --reservedColor: #18a2b8;
+}
+
 .rocketCard {
   display: flex;
-  width: 50%;
-  column-gap: 50px;
+  width: 80%;
+  column-gap: 20px;
+  text-align: justify;
 }
 
 .rocketsContainer {
@@ -9,4 +15,18 @@
   flex-direction: column;
   row-gap: 45px;
   align-items: center;
+}
+
+.button {
+  background-color: var(--reservationColor);
+  border-style: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.reserved {
+  background-color: var(--reservedColor);
+  color: white;
+  margin-right: 10px;
 }
