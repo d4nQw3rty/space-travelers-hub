@@ -29,7 +29,7 @@ const getDragons = (payload) => {
 }
 
 const sortDragons = (payload) => {
-  type:SORT_DRAGONS,
+  type: SORT_DRAGONS,
   payload,
 }
 
