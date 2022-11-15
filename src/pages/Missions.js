@@ -17,7 +17,7 @@ const Missions = () => {
   [status, dispatch]);
 
   return (
-    <>
+    <div>
       <div>
         <div className={style.container}>
           <div className={style.itemContainer}>
@@ -28,21 +28,21 @@ const Missions = () => {
           </div>
         </div>
       </div>
-      {missions.map((mission) => (
-        <div key={mission.mission_id}>
+      {missions.map((mission, index) => (
+        <div key={mission.mission_id} id={index + 1} className={style.item}>
           <div className={style.container}>
             <div className={style.itemContainer}>
               <p className={`${style.itemClass1} ${style.itemPadding}`}>{mission.mission_name}</p>
               <p className={`${style.itemClass2} ${style.itemPadding}`}>{mission.description}</p>
-              <p className={`${style.itemClass1} ${style.itemPadding}`}>{mission.status}</p>
-              <p className={`${style.itemClass1} ${style.itemPadding}`}>
+              <p className={`${style.itemClass1} ${style.itemPadding} ${style.badge}`}>Not a Member</p>
+              <p className={`${style.itemClass1} ${style.itemPadding} ${style.button}`}>
                 <button type="button" className={style.button}>Join Mission</button>
               </p>
             </div>
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
