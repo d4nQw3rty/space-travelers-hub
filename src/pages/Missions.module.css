@@ -1,19 +1,23 @@
-.thead {
+.container {
   display: flex;
   width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.301);
-  padding: 1% 0;
 }
 
-.tr {
+.itemContainer {
   display: flex;
-  padding: 1%;
+  width: 100%;
 }
 
-.td1 {
+.itemClass1 {
   flex: 1;
 }
 
-.td2 {
-  flex: 2;
+.itemClass2 {
+  flex: 4;
+}
+
+.itemPadding {
+  padding: 5px 0 5px 0;
+  border: solid 1px black;
+  align-items: center;
 }

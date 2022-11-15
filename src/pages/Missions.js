@@ -3,14 +3,14 @@ import style from './Missions.module.css';
 
 const Missions = () => (
   <div>
-    <table className={style.thead}>
-      <tr className={style.tr}>
-        <td className={style.td1}>Mission</td>
-        <td className={style.td2}>Description</td>
-        <td>Status</td>
-        <td />
-      </tr>
-    </table>
+    <div className={style.container}>
+      <div className={style.itemContainer}>
+        <p className={`${style.itemClass1} ${style.itemPadding}`}>Mission</p>
+        <p className={`${style.itemClass2} ${style.itemPadding}`}>Description</p>
+        <p className={`${style.itemClass1} ${style.itemPadding}`}>Status</p>
+        <p className={`${style.itemClass1} ${style.itemPadding}`} />
+      </div>
+    </div>
   </div>
 );
 
