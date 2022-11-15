@@ -28,12 +28,26 @@ const Rockets = () => {
       <div key={uuid()} className={style.rocketCard}>
         <img src={rocket.flickr_images[0]} alt="rocket" height="300px" width="400px" />
         <div className="description">
-          <h3>{rocket.rocket_name}</h3>
+          <h3 className={style.rocketName}>{rocket.rocket_name}</h3>
           <p>
-            <span className={style.reserved}>{ Math.random() < 0.3 ? 'Reserved' : ''}</span>
+            {
+              Math.random() < 0.3
+                ? <span className={style.reserved}>Reserved</span>
+                : null
+            }
             {rocket.description}
           </p>
-          <button className={style.button} type="button">Reserve Rocket</button>
+          <button
+            className={
+              Math.random() < 0.5
+                ? style.buttonActive
+                : style.button
+            }
+            type="button"
+          >
+            Reserve Rocket
+
+          </button>
         </div>
       </div>
     ));
@@ -41,7 +55,7 @@ const Rockets = () => {
 
   return (
     <div className={style.rocketsContainer}>
-      <h2>Rockets</h2>
+      <h2 className={style.title}>Rockets</h2>
       {renderRockets()}
     </div>
   );
