@@ -3,7 +3,7 @@
 // import missionsReducer from '../missions/missionsSlice';
 // import rocketsReducer from '../rockets/rocketsSlice';
 
-/*export const store = configureStore({
+/* export const store = configureStore({
   reducer: {
     Dragons: dragonsReducer,
     Missions: missionsReducer,
