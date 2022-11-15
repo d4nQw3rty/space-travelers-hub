@@ -7,6 +7,6 @@
 .rocketsContainer {
   display: flex;
   flex-direction: column;
-  row-gap: 40px;
+  row-gap: 45px;
   align-items: center;
 }
