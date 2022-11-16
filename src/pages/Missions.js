@@ -34,7 +34,7 @@ const Missions = () => {
             <div className={style.itemContainer}>
               <p className={`${style.itemClass1} ${style.itemPadding}`}>{mission.mission_name}</p>
               <p className={`${style.itemClass2} ${style.itemPadding}`}>{mission.description}</p>
-              <p className={`${style.itemClass1} ${style.itemPadding} ${style.badge}`}>Not a Member</p>
+              <p className={`${style.itemClass1} ${style.itemPadding} ${style.badge}`}><span>Not a Member</span></p>
               <p className={`${style.itemClass1} ${style.itemPadding} ${style.button}`}>
                 <button type="button" className={style.button}>Join Mission</button>
               </p>
