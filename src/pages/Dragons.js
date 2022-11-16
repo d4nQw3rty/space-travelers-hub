@@ -1,5 +1,7 @@
+import DragonList from '../components/DragonList';
+
 const Dragons = () => (
-  <div>Dragons</div>
+  <DragonList />
 );
 
 export default Dragons;

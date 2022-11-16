@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import fetchDragons from '../redux/reducer/dragons/fetchDragons';
-import Dragon from './Dragons';
 
 const DragonList = () => {
   const dragons = useSelector((state) => state.dragons.dragons);
@@ -12,7 +11,6 @@ const DragonList = () => {
       dispatch(fetchDragons());
     }
   }, [status, dispatch]);
-  console.log(dragons);
   const showDragons = () => {
     if (status === 'loading') {
       return <div className="loading"><p className="message">Loading. Please Wait.</p></div>;
@@ -22,15 +20,19 @@ const DragonList = () => {
       return <div className="fail"><p className="failMessage">Sorry, the Dragons are not avaliable right now. Try again later</p></div>;
     }
 
-    return dragons.forEach((dragon) => { // eslint-disable-line
-      <Dragon props={dragon} />;
-    });
+    return dragons.map((dragon) => ( // eslint-disable-line
+      <div key={Date.now()} className="dragonCard">
+        <p className="dragonName">{dragon.name}</p>
+        <p className="dragonType">type</p>
+        {(true) ? <button className="cancel" type="button">Cancel Reservation</button> : <button className="reserve" type="button">Make Reservation</button>}
+      </div>
+    ));
   };
 
   return (
     <div className="dragonList">
       <h1 className="list">List of Dragons</h1>
-      {showDragons}
+      {showDragons()}
     </div>
   );
 };
