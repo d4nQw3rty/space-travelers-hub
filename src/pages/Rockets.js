@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { v4 as uuid } from 'uuid';
 import style from './Rockets.module.css';
 import { fetchRockets } from '../redux/reducer/rockets/rocketsSlice';
 
@@ -25,7 +24,7 @@ const Rockets = () => {
     }
 
     return rockets.map((rocket) => (
-      <div key={uuid()} className={style.rocketCard}>
+      <div key={rocket.id} className={style.rocketCard}>
         <img src={rocket.flickr_images[0]} alt="rocket" height="300px" width="400px" />
         <div className="description">
           <h3 className={style.rocketName}>{rocket.rocket_name}</h3>
