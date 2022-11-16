@@ -13,30 +13,36 @@ const Missions = () => {
     if (status === 'idle') {
       dispatch(fetchMissions());
     }
-  }, [status, dispatch]);
-
-  const renderMissions = () => {
-    if (status === 'loading') {
-      return <div>Loading...</div>;
-    }
-
-    if (status === 'failed') {
-      return <div>Failed to load missions</div>;
-    }
-
-    return missions.map((mission) => (
-      <div key={mission.mission_id} className={style.mission}>
-        <h3>{mission.mission_name}</h3>
-        <p>{mission.description}</p>
-      </div>
-    ));
-  };
+  },
+  [status, dispatch]);
 
   return (
-    <div className={style.missionsContainer}>
-      <h2>Missions</h2>
-      {renderMissions()}
-    </div>
+    <>
+      <div>
+        <div className={style.container}>
+          <div className={style.itemContainer}>
+            <p className={`${style.itemClass1} ${style.itemPadding}`}>Mission</p>
+            <p className={`${style.itemClass2} ${style.itemPadding}`}>Description</p>
+            <p className={`${style.itemClass1} ${style.itemPadding}`}>Status</p>
+            <p className={`${style.itemClass1} ${style.itemPadding}`} />
+          </div>
+        </div>
+      </div>
+      {missions.map((mission) => (
+        <div key={mission.mission_id}>
+          <div className={style.container}>
+            <div className={style.itemContainer}>
+              <p className={`${style.itemClass1} ${style.itemPadding}`}>{mission.mission_name}</p>
+              <p className={`${style.itemClass2} ${style.itemPadding}`}>{mission.description}</p>
+              <p className={`${style.itemClass1} ${style.itemPadding}`}>{mission.status}</p>
+              <p className={`${style.itemClass1} ${style.itemPadding}`}>
+                <button type="button" className={style.button}>Join Mission</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </>
   );
 };
 
