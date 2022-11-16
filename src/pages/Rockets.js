@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import style from './Rockets.module.css';
-import { fetchRockets } from '../redux/reducer/rockets/rocketsSlice';
+import { fetchRockets, reserveRocket } from '../redux/reducer/rockets/rocketsSlice';
 
 const Rockets = () => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets.rockets);
   const status = useSelector((state) => state.rockets.status);
+
+  console.log(rockets);
 
   useEffect(() => {
     if (status === 'idle') {
@@ -30,7 +32,7 @@ const Rockets = () => {
           <h3 className={style.rocketName}>{rocket.rocket_name}</h3>
           <p>
             {
-              Math.random() < 0.3
+              rocket.reserved
                 ? <span className={style.reserved}>Reserved</span>
                 : null
             }
@@ -38,11 +40,12 @@ const Rockets = () => {
           </p>
           <button
             className={
-              Math.random() < 0.5
+              rocket.reserved
                 ? style.buttonActive
                 : style.button
             }
             type="button"
+            onClick={() => dispatch(reserveRocket({ id: rocket.id }))}
           >
             Reserve Rocket
 
