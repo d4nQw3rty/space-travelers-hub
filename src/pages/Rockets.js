@@ -8,8 +8,6 @@ const Rockets = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
   const status = useSelector((state) => state.rockets.status);
 
-  console.log(rockets);
-
   useEffect(() => {
     if (status === 'idle') {
       dispatch(fetchRockets());
