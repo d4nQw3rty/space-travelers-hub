@@ -18,22 +18,32 @@ const missionsSlice = createSlice({
     missions: [],
     status: 'idle',
   },
-  reducers: {},
+  reducers: {
+    joinMission: (state, action) => ({
+      ...state,
+      missions: state.missions.map((thisMission) => {
+        if (thisMission.id === action.payload.id) {
+          return {
+            ...thisMission,
+            reserved: !thisMission.reserved,
+          };
+        }
+        return thisMission;
+      }),
+    }),
+  },
   extraReducers: {
-    [fetchMissions.pending]: (state) => {
-      const value = state;
-      value.status = 'loading';
-    },
     [fetchMissions.fulfilled]: (state, action) => {
       const value = state;
-      value.status = 'succeeded';
-      value.missions = state.missions.concat(action.payload);
-    },
-    [fetchMissions.rejected]: (state) => {
-      const value = state;
-      value.status = 'failed';
+      value.missions = action.payload.map((mission) => ({
+        id: mission.mission_id,
+        mission_name: mission.mission_name,
+        description: mission.description,
+        reserved: false,
+      }));
     },
   },
 });
 
 export default missionsSlice.reducer;
+export const { joinMission } = missionsSlice.actions;
