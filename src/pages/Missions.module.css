@@ -37,30 +37,30 @@
 .inactive {
   color: #fff;
   background-color: gray;
-  border-radius: 5PX;
-  padding: 3PX 5PX ;
+  border-radius: 5px;
+  padding: 3px 5px;
 }
 
 .active {
   color: #fff;
-  background-color:rgb(15, 155, 155);
-  border-radius: 5PX;
-  padding: 3PX 5PX ;
+  background-color: rgb(15, 155, 155);
+  border-radius: 5px;
+  padding: 3px 5px;
 }
 
-.buttonLeaveMission {  
+.buttonLeaveMission {
   color: red;
   background-color: #fff;
   border: solid 1px red;
-  border-radius: 5PX;
-  padding: 10px 15px; ;
+  border-radius: 5px;
+  padding: 10px 15px;
 }
 
 .buttonJoinMission {
-  color:gray;
+  color: gray;
   background-color: #fff;
   border: solid 1px gray;
   font-weight: bold;
-  border-radius: 5PX;
-  padding: 10px 15px; ;
+  border-radius: 5px;
+  padding: 10px 15px;
 }
