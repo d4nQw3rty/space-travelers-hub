@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import fetchDragons from '../redux/reducer/dragons/fetchDragons';
+import { reserveDragon, cancelDragon } from '../redux/reducer/dragons/dragonSlice';
 
 const DragonList = () => {
   const dragons = useSelector((state) => state.dragons.dragons);
@@ -11,6 +12,8 @@ const DragonList = () => {
       dispatch(fetchDragons());
     }
   }, [status, dispatch]);
+
+  console.log(dragons);
   const showDragons = () => {
     if (status === 'loading') {
       return <div className="loading"><p className="message">Loading. Please Wait.</p></div>;
@@ -21,10 +24,11 @@ const DragonList = () => {
     }
 
     return dragons.map((dragon) => ( // eslint-disable-line
-      <div key={Date.now()} className="dragonCard">
+      <div key={dragon.id} className="dragonCard">
+        <img src={dragon.image[0]} alt="" className="dragonImage" />
         <p className="dragonName">{dragon.name}</p>
-        <p className="dragonType">type</p>
-        {(true) ? <button className="cancel" type="button">Cancel Reservation</button> : <button className="reserve" type="button">Make Reservation</button>}
+        <p className="dragonType">{dragon.type}</p>
+        {(dragon.reserved) ? <button className="cancel" type="button" onClick={() => dispatch(cancelDragon({ id: dragon.id }))}>Cancel Reservation</button> : <button className="reserve" type="button" onClick={() => dispatch(reserveDragon({ id: dragon.id }))}>Make Reservation</button>}
       </div>
     ));
   };
