@@ -1,18 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import style from './Rockets.module.css';
-import { fetchRockets, reserveRocket } from '../redux/reducer/rockets/rocketsSlice';
+import { reserveRocket } from '../redux/reducer/rockets/rocketsSlice';
 
 const Rockets = () => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets.rockets);
   const status = useSelector((state) => state.rockets.status);
-
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchRockets());
-    }
-  }, [status, dispatch]);
 
   const renderRockets = () => {
     if (status === 'loading') {
