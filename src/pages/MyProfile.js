@@ -9,11 +9,11 @@ const MyProfile = () => {
       <div className={style.MyProfileChild}>
         <h2 className={style.ChildTitle}>My Missions</h2>
         <ul className={style.list}>
-          {missions.map(
-            (mission) => mission.reserved && (
-            <li key={mission.id} className={style.listChild}>{mission.mission_name}</li>
-            ),
-          )}
+          {missions.filter((mission) => mission.reserved).map((mission) => (
+            <li key={mission.mission_id} className={style.listChild}>
+              {mission.mission_name}
+            </li>
+          ))}
         </ul>
       </div>
     </div>
