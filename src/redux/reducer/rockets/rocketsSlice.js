@@ -22,7 +22,19 @@ const rocketsSlice = createSlice({
         if (thisRocket.id === action.payload.id) {
           return {
             ...thisRocket,
-            reserved: !thisRocket.reserved,
+            reserved: true,
+          };
+        }
+        return thisRocket;
+      }),
+    }),
+    cancelRocket: (state, action) => ({
+      ...state,
+      rockets: state.rockets.map((thisRocket) => {
+        if (thisRocket.id === action.payload.id) {
+          return {
+            ...thisRocket,
+            reserved: false,
           };
         }
         return thisRocket;
