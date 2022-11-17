@@ -20,11 +20,12 @@ const MyProfile = () => {
       <div className={style.MyProfileChild}>
         <h2 className={style.ChildTitle}>My Rockets</h2>
         <ul className={style.list}>
-          {rockets.map(
-            (rockets) => rockets.reserved && (
-            <li key={rockets.id} className={style.listChild}>{rockets.rocket_name}</li>
-            ),
-          )}
+          {rockets.filter((rocket) => rocket.reserved).map((rocket) => (
+            <li key={rocket.id} className={style.listChild}>
+              {rocket.rocket_name}
+            </li>
+          ))}
+
         </ul>
 
       </div>
