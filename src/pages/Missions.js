@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import style from './Missions.module.css';
 import {
-  fetchMissions,
   joinMission,
   leaveMission,
 } from '../redux/reducer/missions/missionsSlice';
@@ -10,13 +9,6 @@ import {
 const Missions = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions.missions);
-  const status = useSelector((state) => state.missions.status);
-
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchMissions());
-    }
-  }, [status, dispatch]);
 
   return (
     <>
