@@ -31,9 +31,9 @@
 
 .buttonActive {
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid lightgray;
   padding: 10px 20px;
-  color: black;
+  color: gray;
   border-radius: 5px;
 }
 
