@@ -4,6 +4,7 @@ import style from './Missions.module.css';
 import {
   fetchMissions,
   joinMission,
+  leaveMission,
 } from '../redux/reducer/missions/missionsSlice';
 
 const Missions = () => {
@@ -55,8 +56,8 @@ const Missions = () => {
               >
                 {
                   mission.reserved
-                    ? (<button type="button" className={style.buttonLeaveMission} onClick={() => dispatch(joinMission(mission))}>Leave Mission</button>)
-                    : (<button type="button" className={style.buttonJoinMission} onClick={() => dispatch(joinMission(mission))}>Join Mission</button>)
+                    ? (<button type="button" className={style.buttonLeaveMission} onClick={() => dispatch(leaveMission(mission))}>Leave Missin</button>)
+                    : (<button type="button" className={style.buttonJoinMission} onClick={() => dispatch(joinMission(mission))}>Join Missin</button>)
                 }
               </div>
             </div>
