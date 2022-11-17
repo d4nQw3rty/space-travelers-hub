@@ -13,7 +13,6 @@ const DragonList = () => {
     }
   }, [status, dispatch]);
 
-  console.log(dragons);
   const showDragons = () => {
     if (status === 'loading') {
       return <div className="loading"><p className="message">Loading. Please Wait.</p></div>;
