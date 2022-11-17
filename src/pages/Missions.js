@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import style from './Missions.module.css';
-import { fetchMissions } from '../redux/reducer/missions/missionsSlice';
-// import missionsReducer from '../missions/missionsSlice';
+import {
+  fetchMissions,
+  joinMission,
+} from '../redux/reducer/missions/missionsSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -13,36 +15,55 @@ const Missions = () => {
     if (status === 'idle') {
       dispatch(fetchMissions());
     }
-  },
-  [status, dispatch]);
+  }, [status, dispatch]);
 
   return (
-    <div>
+    <>
       <div>
         <div className={style.container}>
           <div className={style.itemContainer}>
-            <p className={`${style.itemClass1} ${style.itemPadding}`}>Mission</p>
-            <p className={`${style.itemClass2} ${style.itemPadding}`}>Description</p>
+            <p className={`${style.itemClass1} ${style.itemPadding}`}>
+              Mission
+            </p>
+            <p className={`${style.itemClass2} ${style.itemPadding}`}>
+              Description
+            </p>
             <p className={`${style.itemClass1} ${style.itemPadding}`}>Status</p>
             <p className={`${style.itemClass1} ${style.itemPadding}`} />
           </div>
         </div>
       </div>
       {missions.map((mission, index) => (
-        <div key={mission.mission_id} id={index + 1} className={style.item}>
+        <div key={mission.id} id={index + 1} className={style.item}>
           <div className={style.container}>
             <div className={style.itemContainer}>
-              <p className={`${style.itemClass1} ${style.itemPadding}`}>{mission.mission_name}</p>
-              <p className={`${style.itemClass2} ${style.itemPadding}`}>{mission.description}</p>
-              <p className={`${style.itemClass1} ${style.itemPadding} ${style.badge}`}><span>Not a Member</span></p>
-              <p className={`${style.itemClass1} ${style.itemPadding} ${style.button}`}>
-                <button type="button" className={style.button}>Join Mission</button>
+              <p className={`${style.itemClass1} ${style.itemPadding}`}>
+                {mission.mission_name}
               </p>
+              <p className={`${style.itemClass2} ${style.itemPadding}`}>
+                {mission.description}
+              </p>
+              <p className={`${style.itemClass1} ${style.itemPadding} ${style.badge}`}>
+                {
+                  mission.reserved
+                    ? (<span className={style.active}>Active Member</span>)
+                    : (<span className={style.inactive}>NOT A MEMBER</span>)
+                }
+              </p>
+              <div
+                className={`${style.itemClass1} ${style.itemPadding} ${style.button}`}
+              >
+                {
+                  mission.reserved
+                    ? (<button type="button" className={style.buttonLeaveMission} onClick={() => dispatch(joinMission(mission))}>Leave Mission</button>)
+                    : (<button type="button" className={style.buttonJoinMission} onClick={() => dispatch(joinMission(mission))}>Join Mission</button>)
+                }
+              </div>
             </div>
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 
