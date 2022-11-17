@@ -56,8 +56,8 @@ const Missions = () => {
               >
                 {
                   mission.reserved
-                    ? (<button type="button" className={style.buttonLeaveMission} onClick={() => dispatch(leaveMission(mission))}>Leave Missin</button>)
-                    : (<button type="button" className={style.buttonJoinMission} onClick={() => dispatch(joinMission(mission))}>Join Missin</button>)
+                    ? (<button type="button" className={style.buttonLeaveMission} onClick={() => dispatch(leaveMission(mission))}>Leave Mission</button>)
+                    : (<button type="button" className={style.buttonJoinMission} onClick={() => dispatch(joinMission(mission))}>Join Mission</button>)
                 }
               </div>
             </div>
