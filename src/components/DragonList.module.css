@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.dragonsTitle {
+  text-align: center;
+}
+
+.dragonImg {
+  width: 480px;
+  height: 320px;
+}
+
+.dragonName,
+.dragonType {
+  margin: 10px auto;
+}
+
+.dragonName {
+  font-size: 30px;
+}
+
+.dragonType {
+  font-size: 25px;
+}
+
+.cancel {
+  font-size: 18px;
+  padding: 12px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+}
+
+.reserve {
+  font-size: 18px;
+  padding: 12px;
+  border: none;
+  background-color: #007bff;
+  border-style: none;
+  color: white;
+  border-radius: 8px;
+}
+
+.dragonsContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dragonCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
