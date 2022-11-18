@@ -23,12 +23,12 @@ const DragonList = () => {
 
 return dragons.map((dragon) => ( // eslint-disable-line
   <div key={Date.now()} className="dragonCard">
-        <p className="dragonName">{dragon.name}</p>
-        <p className="dragonType">type</p>
-        {(true) ? <button className="cancel" type="button">Cancel Reservation</button> : <button className="reserve" type="button">Make Reservation</button>}
-      </div>
-    ));
-  };
+    <p className="dragonName">{dragon.name}</p>
+    <p className="dragonType">type</p>
+    {(true) ? <button className="cancel" type="button">Cancel Reservation</button> : <button className="reserve" type="button">Make Reservation</button>}
+  </div>
+     ));
+    };
 
   return (
     <div className="dragonList">
