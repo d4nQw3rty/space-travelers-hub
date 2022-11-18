@@ -1,7 +1,7 @@
 {
   "name": "space-traveler",
   "version": "0.1.0",
-  "private": true,
+  "private": true,  
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.0",
     "@testing-library/jest-dom": "^5.16.5",
