@@ -41,6 +41,7 @@ const dragonSlice = createSlice({
         name: dragon.name,
         reserved: false,
         type: dragon.type,
+        description: dragon.description,
       }));
     },
     [fetchDragons.rejected]: (state) => {
