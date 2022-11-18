@@ -8,7 +8,7 @@ import MyProfile from './pages/MyProfile';
 import NavBar from './components/NavBar';
 import { fetchRockets } from './redux/reducer/rockets/rocketsSlice';
 import { fetchMissions } from './redux/reducer/missions/missionsSlice';
-import { fetchDragons } from './redux/reducer/dtagons/fetchDragon';
+import { fetchDragons } from './redux/reducer/dragons/fetchDragon';
 
 const App = () => {
   const dispatch = useDispatch();
