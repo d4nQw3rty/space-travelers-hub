@@ -1,42 +1,62 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import style from './Missions.module.css';
-import { fetchMissions } from '../redux/reducer/missions/missionsSlice';
-// import missionsReducer from '../missions/missionsSlice';
+import {
+  joinMission,
+  leaveMission,
+} from '../redux/reducer/missions/missionsSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions.missions);
-  const status = useSelector((state) => state.missions.status);
-
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchMissions());
-    }
-  }, [status, dispatch]);
-
-  const renderMissions = () => {
-    if (status === 'loading') {
-      return <div>Loading...</div>;
-    }
-
-    if (status === 'failed') {
-      return <div>Failed to load missions</div>;
-    }
-
-    return missions.map((mission) => (
-      <div key={mission.mission_id} className={style.mission}>
-        <h3>{mission.mission_name}</h3>
-        <p>{mission.description}</p>
-      </div>
-    ));
-  };
 
   return (
-    <div className={style.missionsContainer}>
-      <h2>Missions</h2>
-      {renderMissions()}
-    </div>
+    <>
+      <div>
+        <div className={style.container}>
+          <div className={style.itemContainer}>
+            <p className={`${style.itemClass1} ${style.itemPadding}`}>
+              Mission
+            </p>
+            <p className={`${style.itemClass2} ${style.itemPadding}`}>
+              Description
+            </p>
+            <p className={`${style.itemClass1} ${style.itemPadding}`}>Status</p>
+            <p className={`${style.itemClass1} ${style.itemPadding}`} />
+          </div>
+        </div>
+      </div>
+      {missions.map((mission, index) => (
+        <div key={mission.id} id={index + 1} className={style.item}>
+          <div className={style.container}>
+            <div className={style.itemContainer}>
+              <p className={`${style.itemClass1} ${style.itemPadding}`}>
+                {mission.mission_name}
+              </p>
+              <p className={`${style.itemClass2} ${style.itemPadding}`}>
+                {mission.description}
+              </p>
+              <p className={`${style.itemClass1} ${style.itemPadding} ${style.badge}`}>
+                {
+                  mission.reserved
+                    ? (<span className={style.active}>Active Member</span>)
+                    : (<span className={style.inactive}>NOT A MEMBER</span>)
+                }
+              </p>
+              <div
+                className={`${style.itemClass1} ${style.itemPadding} ${style.button}`}
+              >
+                {
+                  mission.reserved
+                    ? (<button type="button" className={style.buttonLeaveMission} onClick={() => dispatch(leaveMission(mission))}>Leave Mission</button>)
+                    : (<button type="button" className={style.buttonJoinMission} onClick={() => dispatch(joinMission(mission))}>Join Mission</button>)
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </>
   );
 };
 

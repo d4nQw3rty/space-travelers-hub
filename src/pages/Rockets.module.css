@@ -1,7 +1,17 @@
+:root {
+  --reservationColor: #007bff;
+  --reservedColor: #18a2b8;
+}
+
+.title {
+  font-size: 40px;
+}
+
 .rocketCard {
   display: flex;
-  width: 50%;
-  column-gap: 50px;
+  width: 80%;
+  column-gap: 20px;
+  text-align: justify;
 }
 
 .rocketsContainer {
@@ -9,4 +19,38 @@
   flex-direction: column;
   row-gap: 45px;
   align-items: center;
+}
+
+.button {
+  background-color: var(--reservationColor);
+  border-style: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.buttonActive {
+  background-color: white;
+  border: 1px solid lightgray;
+  padding: 10px 20px;
+  color: gray;
+  border-radius: 5px;
+}
+
+.reserved {
+  background-color: var(--reservedColor);
+  color: white;
+  padding: 1.3px 20px;
+  border-radius: 3px;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.description {
+  margin-left: 10px;
+}
+
+.rocketName {
+  font-size: 32px;
+  margin-top: 0;
 }
