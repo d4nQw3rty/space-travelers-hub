@@ -6,8 +6,10 @@ import Missions from './pages/Missions';
 import Dragons from './pages/Dragons';
 import MyProfile from './pages/MyProfile';
 import NavBar from './components/NavBar';
+import fetchDragons from '../redux/reducer/dragons/fetchDragons';
 
 const App = () => (
+  dispatch(fetchDragons())
   <>
     <main className="d-flex">
       <NavBar />

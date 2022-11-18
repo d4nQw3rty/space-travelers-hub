@@ -1,17 +1,10 @@
-import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import fetchDragons from '../redux/reducer/dragons/fetchDragons';
 import { reserveDragon, cancelDragon } from '../redux/reducer/dragons/dragonSlice';
 
 const DragonList = () => {
   const dragons = useSelector((state) => state.dragons.dragons);
   const status = useSelector((state) => state.dragons.status);
   const dispatch = useDispatch();
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchDragons());
-    }
-  }, [status, dispatch]);
 
   const showDragons = () => {
     if (status === 'loading') {
