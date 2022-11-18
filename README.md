@@ -161,19 +161,25 @@ To run tests, run the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👤 **Danys Linares**
 
-👤 **Author1**
+- GitHub: [@github](https://github.com/d4nQw3rty)
+- Twitter: [@twitter](https://twitter.com/Danys_Linares)
+- LinkedIn: [LinkedIn](www.linkedin.com/in/danys-linares-6a328b238)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Oscar Fernández Muñoz**
 
-👤 **Author2**
+- GitHub: [@OscarFMdev](https://github.com/OscarFMdev)
+- Twitter: [@twitterhandle](https://twitter.com/oscarfmdev)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/oscarfmdev)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Akpuru Solomon Barine**
+
+- GitHub: [@Solobarine](https://github.com/Solobarine)
+- Twitter: [@SolomonAkpuru](https://twitter.com/SolomonAkpuru)
+- LinkedIn: [Solomon Akpuru](https://www.linkedin.com/mwlite/in/solomon-akpuru-17069b241)
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -181,11 +187,8 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[Improve styling of the page]**
+- [ ] **[Add more information from the API]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -203,9 +206,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project leave a star.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -213,9 +214,7 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+We would like to thank [SpaceX](https://docs.spacexdata.com/) for making this project possible. :spaceship:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -223,15 +222,13 @@ I would like to thank...
 
 ## ❓ FAQ <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+- **[Can I modify this project?]**
 
-- **[Question_1]**
+  - [Yes, you can make all the changes you'd like locally.]
 
-  - [Answer_1]
+- **[Can I add more rockets to the API]**
 
-- **[Question_2]**
-
-  - [Answer_2]
+  - [No, this API is not created by us.]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -240,7 +237,5 @@ I would like to thank...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
