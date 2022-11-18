@@ -27,8 +27,8 @@ return dragons.map((dragon) => ( // eslint-disable-line
     <p className="dragonType">type</p>
     {(true) ? <button className="cancel" type="button">Cancel Reservation</button> : <button className="reserve" type="button">Make Reservation</button>}
   </div>
-     ));
-    };
+    ));
+  };
 
   return (
     <div className="dragonList">
