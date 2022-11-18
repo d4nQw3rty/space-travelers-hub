@@ -5,6 +5,7 @@ import style from './MyProfile.module.css';
 const MyProfile = () => {
   const missions = useSelector((state) => state.missions.missions);
   const rockets = useSelector((state) => state.rockets.rockets);
+  const dragons = useSelector((state) => state.dragons.dragons);
   return (
     <div className={style.MyProfile}>
       <div className={style.MyProfileChild}>
@@ -25,9 +26,17 @@ const MyProfile = () => {
               {rocket.rocket_name}
             </li>
           ))}
-
         </ul>
-
+      </div>
+      <div className={style.MyProfileChild}>
+        <h2 className={style.ChildTitle}>My Dragons</h2>
+        <ul className={style.list}>
+          {dragons.filter((dragon) => dragon.reserved).map((dragon) => (
+            <li key={dragon.id} className={style.listChild}>
+              {dragon.name}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

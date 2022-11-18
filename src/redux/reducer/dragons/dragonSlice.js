@@ -7,7 +7,26 @@ const dragonSlice = createSlice({
     dragons: [],
     status: 'idle',
   },
-  reducers: {},
+  reducers: {
+    reserveDragon: (state, action) => ({
+      ...state,
+      dragons: state.dragons.map((dragon) => {
+        if (dragon.id === action.payload.id) {
+          return { ...dragon, reserved: true };
+        }
+        return dragon;
+      }),
+    }),
+    cancelDragon: (state, action) => ({
+      ...state,
+      dragons: state.dragons.map((dragon) => {
+        if (dragon.id === action.payload.id) {
+          return { ...dragon, reserved: false };
+        }
+        return dragon;
+      }),
+    }),
+  },
   extraReducers: {
     [fetchDragons.pending]: (state) => {
       const result = state;
@@ -16,7 +35,13 @@ const dragonSlice = createSlice({
     [fetchDragons.fulfilled]: (state, action) => {
       const result = state;
       result.status = 'succeeded';
-      result.dragons = state.dragons.concat(action.payload);
+      result.dragons = action.payload.map((dragon) => ({
+        id: dragon.id,
+        image: dragon.flickr_images,
+        name: dragon.name,
+        reserved: false,
+        type: dragon.type,
+      }));
     },
     [fetchDragons.rejected]: (state) => {
       const result = state;
@@ -25,4 +50,5 @@ const dragonSlice = createSlice({
   },
 });
 
+export const { reserveDragon, cancelDragon } = dragonSlice.actions;
 export default dragonSlice.reducer;

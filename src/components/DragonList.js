@@ -1,17 +1,12 @@
-import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import fetchDragons from '../redux/reducer/dragons/fetchDragons';
-import './DragonList.css';
+
+import { reserveDragon, cancelDragon } from '../redux/reducer/dragons/dragonSlice';
 
 const DragonList = () => {
   const dragons = useSelector((state) => state.dragons.dragons);
   const status = useSelector((state) => state.dragons.status);
   const dispatch = useDispatch();
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchDragons());
-    }
-  }, [status, dispatch]);
+
   const showDragons = () => {
     if (status === 'loading') {
       return <div className="loading"><p className="message">Loading. Please Wait.</p></div>;
@@ -21,12 +16,13 @@ const DragonList = () => {
       return <div className="fail"><p className="failMessage">Sorry, the Dragons are not avaliable right now. Try again later</p></div>;
     }
 
-return dragons.map((dragon) => ( // eslint-disable-line
-  <div key={Date.now()} className="dragonCard">
-    <p className="dragonName">{dragon.name}</p>
-    <p className="dragonType">type</p>
-    {(true) ? <button className="cancel" type="button">Cancel Reservation</button> : <button className="reserve" type="button">Make Reservation</button>}
-  </div>
+    return dragons.map((dragon) => ( // eslint-disable-line
+      <div key={dragon.id} className="dragonCard">
+        <img src={dragon.image[0]} alt="" className="dragonImage" />
+        <p className="dragonName">{dragon.name}</p>
+        <p className="dragonType">{dragon.type}</p>
+        {(dragon.reserved) ? <button className="cancel" type="button" onClick={() => dispatch(cancelDragon({ id: dragon.id }))}>Cancel Reservation</button> : <button className="reserve" type="button" onClick={() => dispatch(reserveDragon({ id: dragon.id }))}>Make Reservation</button>}
+      </div>
     ));
   };
 
