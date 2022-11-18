@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import fetchDragons from '../redux/reducer/dragons/fetchDragons';
+import './DragonList.css';
 
 const DragonList = () => {
   const dragons = useSelector((state) => state.dragons.dragons);
@@ -20,7 +21,7 @@ const DragonList = () => {
       return <div className="fail"><p className="failMessage">Sorry, the Dragons are not avaliable right now. Try again later</p></div>;
     }
 
-    return dragons.map((dragon) => ( // eslint-disable-line
+return dragons.map((dragon) => ( // eslint-disable-line
       <div key={Date.now()} className="dragonCard">
         <p className="dragonName">{dragon.name}</p>
         <p className="dragonType">type</p>
