@@ -1,7 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 
 const Dragon = (props) => {
-  console.log(props);
   return (
     <div key={Date.now()} className="dragonCard">
       <p className="dragonName">name</p>
@@ -12,3 +12,4 @@ const Dragon = (props) => {
 };
 
 export default Dragon;
+
