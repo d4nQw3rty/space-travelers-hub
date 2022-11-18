@@ -13,10 +13,12 @@ const handleActive = ({ isActive }) => (isActive
 const NavBar = () => (
   <header className={s.headerContainer}>
     <NavLink to="/" className={s.logo}>
-      <img src={img} alt="Logo" />
-      <h1>
-        Space Travelers&apos; Hub
-      </h1>
+      <div className={s.logoContainer}>
+        <img src={img} alt="Logo" />
+        <h1>
+          Space Travelers&apos; Hub
+        </h1>
+      </div>
     </NavLink>
     <nav className={s.navigation}>
       <NavLink
