@@ -1,0 +1,70 @@
+.bigBox {
+  margin: 0 3%;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.itemContainer {
+  display: flex;
+  width: 100%;
+}
+
+.itemClass1 {
+  flex: 1;
+}
+
+.itemClass2 {
+  flex: 4;
+}
+
+.itemPadding {
+  padding: 5px 0 15px 0;
+  border: solid 1px rgba(0, 0, 0, 0.384);
+  align-items: center;
+  margin: 0;
+}
+
+.item:nth-child(even) {
+  background-color: rgb(240, 240, 240);
+}
+
+.badge,
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inactive {
+  color: #fff;
+  background-color: gray;
+  border-radius: 5px;
+  padding: 3px 5px;
+}
+
+.active {
+  color: #fff;
+  background-color: rgb(15, 155, 155);
+  border-radius: 5px;
+  padding: 3px 5px;
+}
+
+.buttonLeaveMission {
+  color: red;
+  background-color: #fff;
+  border: solid 1px red;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.buttonJoinMission {
+  color: gray;
+  background-color: #fff;
+  border: solid 1px gray;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px 15px;
+}

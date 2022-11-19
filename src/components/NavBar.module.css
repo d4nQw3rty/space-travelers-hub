@@ -1,0 +1,29 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 50px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.logo,
+.navigation {
+  display: flex;
+  column-gap: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.navigation > *:not(span) {
+  color: blue;
+  text-decoration: none;
+}
+
+.active {
+  color: red;
+}
